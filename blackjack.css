@@ -1,0 +1,69 @@
+.table{
+	max-width: 1080px;
+	background-color: green;
+	width: 90%;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+	overflow:hidden;
+	padding: 10%;
+	
+}
+
+#win-loss{
+	background-color: red;
+	width: 15%;
+	margin: auto;
+	color: white;
+	text-align: center;
+	font-size: 40px;
+}
+
+#win-count{
+	display: inline;
+}
+
+
+.card{
+	color: black;
+	background: white;
+	height: 60px;
+	width: 30px;
+	padding: 10px;
+	margin: 10px;
+	float: left;
+	border-radius: 7px
+}
+
+#dealer-total-wrapper{
+	margin-left: -35%;
+	color: white;
+	font-size: 40px;
+}
+
+#player-total-wrapper{
+	margin-left: -35%;
+	color: white;
+	font-size: 40px;
+}
+
+
+#play-buttons{
+	margin-left: auto;
+	width:50%;
+	clear:both;
+}
+
+#player-hand{
+	clear: both;
+	margin-left: 35%;
+	position: relative;
+
+}
+
+#dealer-hand{
+	clear: both;
+	margin-left: 35%;
+	position: relative;
+}
