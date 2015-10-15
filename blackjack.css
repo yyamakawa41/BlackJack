@@ -33,7 +33,7 @@
 	padding: 10px;
 	margin: 10px;
 	float: left;
-	border-radius: 7px
+	border-radius: 7px;
 }
 
 #dealer-total-wrapper{
@@ -53,6 +53,12 @@
 	background-color: orange;
 	border-radius: 7px;
 	border-color: black;
+}
+
+#dealer-cards, #player-cards{
+	position: relative;
+	width: 115%;
+
 }
 
 #play-buttons{
