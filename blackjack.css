@@ -33,7 +33,12 @@
 	padding: 10px;
 	margin: 10px;
 	float: left;
+}
+
+.card.empty{
+	border: 2px solid blue;
 	border-radius: 7px;
+	background: grey;
 }
 
 #dealer-total-wrapper{
@@ -79,4 +84,10 @@
 	clear: both;
 	margin-left: 35%;
 	position: relative;
+}
+
+#message{
+	font-size: 40px;
+	color: red;
+	text-align: center;
 }
