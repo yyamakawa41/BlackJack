@@ -121,7 +121,7 @@ function shuffleDeck(){
 		}if(winner === 'dealer'){
 			document.getElementById('message').innerHTML="Dealer Wins!"
 		}
-		document.getElementById('message').innerHTML = "Wanna play again?";
+
 	}
 
 	function reset(){
@@ -133,7 +133,7 @@ function shuffleDeck(){
  		dealerHand;
 		document.getElementById('message').innerHTML = "";
 
-		var cards = document.getElementsByClassName('card');
+		var cards = document.getElementsByClassName("card");
 		for( i=0; i < cards.length; i++){
 			cards[i].className = cards[i].className + " empty";
 			cards.innerHTML = "";
