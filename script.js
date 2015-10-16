@@ -37,17 +37,19 @@ function shuffleDeck(){
 	return deck;
 }
 
-	function placeCard(card, who, slot){
+	function placeCard(cardText, who, slot){
 		var currId = who + '-card-' + slot;
-		document.getElementById(currId).className = "card";
-		document.getElementById(currId).innerHTML = card;
+		var currElement = document.getElementById(currId);
+		currElement.className = "card";
+		currElement.innerHTML = cardText;
 	}
 
 	function bust(who){
 		if(who === "player"){
-			document.getElementById('message').innerHTML = "You have busted, better luck next time!"
-		}else{document.getElementById('message').innerHTML = "The dealer has busted!"
+			document.getElementById('message').innerHTML = "You have busted, better luck next time! "
+		} else if (who ==="dealer"){document.getElementById('message').innerHTML = "The dealer has busted! "
 		}
+		checkWin();
 	}
 
 	function calculateTotal(hand, who){
@@ -60,12 +62,14 @@ function shuffleDeck(){
 			total = total + cardValue; //total += cardValue;
 		}
 		var idWhoToGet = who + '-total';
-		document.getElementById(idWhoToGet).innerHTML = total;	
+		var element=document.getElementById(idWhoToGet);
+		console.dir(element);
+		element.innerHTML = total;
+
 
 		if(total > 21){
 			bust(who);
 			console.log(total);
-			checkWin();
 		}
 		return total;
 	}	
@@ -98,9 +102,11 @@ function shuffleDeck(){
 		playerTotalCards++;
 		placeInDeck++;
 		calculateTotal(playerHand, 'player');
+		
 	}	
 
 	function checkWin(){
+		alert(document.getElementById('message').innerHTML);
 		var playerTotal = Number(document.getElementById('player-total').innerHTML);
 		var dealerTotal = Number(document.getElementById('dealer-total').innerHTML);
 		var winner
@@ -114,12 +120,12 @@ function shuffleDeck(){
 		}
 		console.log("winner: " + winner);
 		if(winner === 'player'){
-			document.getElementById('message').innerHTML="You Win!"
+			document.getElementById('message').innerHTML+="You Win!"
 		}
 		if(winner === 'tie'){
 			document.getElementById('message').innerHTML="It's a push!"
 		}if(winner === 'dealer'){
-			document.getElementById('message').innerHTML="Dealer Wins!"
+			document.getElementById('message').innerHTML+="Dealer Wins!"
 		}
 
 	}
@@ -134,9 +140,10 @@ function shuffleDeck(){
 		document.getElementById('message').innerHTML = "";
 
 		var cards = document.getElementsByClassName("card");
+		console.log(cards);
 		for( i=0; i < cards.length; i++){
 			cards[i].className = cards[i].className + " empty";
-			cards.innerHTML = "";
+			cards[i].innerHTML = "";
 		}
 	}
 
