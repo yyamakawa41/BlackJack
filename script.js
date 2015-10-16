@@ -162,6 +162,6 @@ function shuffleDeck(){
 			placeInDeck++;
 			dealerTotalCards++;
 		}
-		checkWin();
+		// checkWin();
 	}	
 
