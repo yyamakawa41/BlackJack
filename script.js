@@ -4,6 +4,8 @@ var playerTotalCards = 2;
 var dealerTotalCards = 2;
 var playerHand;
 var dealerHand;
+var message;
+var bustMessage;
 
 function shuffleDeck(){
 	var deck =[];	
@@ -46,8 +48,9 @@ function shuffleDeck(){
 
 	function bust(who){
 		if(who === "player"){
-			document.getElementById('message').innerHTML = "You have busted, better luck next time! "
-		} else if (who ==="dealer"){document.getElementById('message').innerHTML = "The dealer has busted! "
+			bustedMessage = "You have busted, better luck next time! "
+		} else if (who ==="dealer"){
+			bustedMessage = "The dealer has busted! "
 		}
 		checkWin();
 	}
@@ -106,28 +109,18 @@ function shuffleDeck(){
 	}	
 
 	function checkWin(){
-		alert(document.getElementById('message').innerHTML);
+		// alert(document.getElementById('message').innerHTML);
 		var playerTotal = Number(document.getElementById('player-total').innerHTML);
 		var dealerTotal = Number(document.getElementById('dealer-total').innerHTML);
 		var winner
 		if (((playerTotal > dealerTotal) && (playerTotal <= 21)) || ((playerTotal <= 21) && (dealerTotal > 21))){
-			winner = 'player';
+			message = "You Win!";
 		} else if ((playerTotal===dealerTotal)&&(playerTotal<=21)){
-			winner='tie'
+			message = "It's a push!";
+		}else{
+			message ="Dealer Wins!"
 		}
-		else{
-			winner = 'dealer';
-		}
-		console.log("winner: " + winner);
-		if(winner === 'player'){
-			document.getElementById('message').innerHTML+="You Win!"
-		}
-		if(winner === 'tie'){
-			document.getElementById('message').innerHTML="It's a push!"
-		}if(winner === 'dealer'){
-			document.getElementById('message').innerHTML+="Dealer Wins!"
-		}
-
+		document.getElementById('message').innerHTML=bustedMessage + message;
 	}
 
 	function reset(){
@@ -137,6 +130,8 @@ function shuffleDeck(){
  		dealerTotalCards = 2;
  		playerHand;
  		dealerHand;
+ 		bustedMessage="";
+ 		message = "";
 		document.getElementById('message').innerHTML = "";
 
 		var cards = document.getElementsByClassName("card");
@@ -162,6 +157,6 @@ function shuffleDeck(){
 			placeInDeck++;
 			dealerTotalCards++;
 		}
-		// checkWin();
+		checkWin();
 	}	
 
