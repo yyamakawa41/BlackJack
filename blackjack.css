@@ -18,6 +18,7 @@
 	color: white;
 	text-align: center;
 	font-size: 40px;
+	border-radius: 40px;
 }
 
 #win-count{
@@ -33,12 +34,17 @@
 	padding: 10px;
 	margin: 10px;
 	float: left;
+	border-radius: 7px;
 }
 
 .card.empty{
 	border: 2px solid blue;
 	border-radius: 7px;
-	background: grey;
+	background: url(http://www.fourthlinebobbles.com/wp-content/uploads/2014/08/NHL.png) no-repeat;
+	background-size: 114px 164px;
+	background-position: center;
+	background-color: skyblue;
+
 }
 
 #dealer-total-wrapper{
